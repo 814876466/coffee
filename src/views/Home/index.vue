@@ -4,9 +4,13 @@
     <header-home></header-home>
     <!-- 首页头部 end -->
     <swiper :autoplay="1000" :loop="true" @change="onchange" ref="my-swiper">
-      <swiper-item>1</swiper-item>
-      <swiper-item>2</swiper-item>
-      <swiper-item>3</swiper-item>
+      <swiper-item v-for="item in bannerList" :key="item.info_id" class="comic_cover">
+        <img :src="item.image_url" alt />
+      </swiper-item>
+
+      <swiper-item>
+        <img src="../../assets/img/logo.png" alt />
+      </swiper-item>
     </swiper>
   </div>
 </template>
@@ -21,7 +25,7 @@
 // import { getBanner } from '@/api/cartoon'
 import HeaderHome from './componments/HeaderHome/HeaderHome'
 import { Swiper, SwiperItem } from '@/components/swipper/index.js'
-
+import { getBanner } from '@/api/comics.js'
 export default {
   name: 'Home',
 
@@ -30,12 +34,35 @@ export default {
     Swiper,
     SwiperItem
   },
+  data () {
+    return {
+      // 考虑数据放在哪里和数据格式
+      // props是别人给我传的
+      bannerList: {}
+    }
+  },
 
   methods: {
     onchange (index) {
       console.log(index)
       console.log(this.$refs['my-swiper'])
     }
+  },
+  created () {
+    getBanner()
+      .then(res => {
+        console.log(res)
+        if (res.code === 1) {
+          this.bannerList = res.data.h5_recommend_male_rotation_map
+          console.log(res.data.h5_recommend_male_rotation_map)
+        } else {
+          // 需要用vant组件左错误提示
+          console.log(res.message)
+        }
+      })
+      .catch(err => {
+        alert('network error', err)
+      })
   }
 }
 </script>
@@ -45,5 +72,13 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+.comic_cover {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  border-radius: 4px;
 }
 </style>

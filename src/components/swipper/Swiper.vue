@@ -55,10 +55,11 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
+<style lang="scss" scoped>
 .swiper-container {
+  padding: 10px;
   width: 100%;
   height: 214px;
+  border-radius: 4px;
 }
 </style>
