@@ -3,24 +3,20 @@
     <!-- 首页头部 begin -->
     <header-home></header-home>
     <!-- 首页头部 end -->
-    <swiper :autoplay="1000" :loop="true" @change="onchange" ref="my-swiper">
-      <swiper-item v-for="item in bannerList" :key="item.info_id" class="comic_cover">
-        <img :src="item.image_url" alt />
-      </swiper-item>
-
-      <swiper-item>
-        <img src="../../assets/img/logo.png" alt />
-      </swiper-item>
-    </swiper>
-
-    <!-- nav starts -->
-    <nav-home></nav-home>
-    <!-- nav ends -->
-
-    <!-- recommend starts -->
-
     <main class="main_index">
-      <recommends></recommends>
+      <swiper :autoplay="1000" :loop="true" @change="onchange" ref="my-swiper">
+        <swiper-item v-for="item in bannerList" :key="item.info_id" class="comic_cover">
+          <img :src="item.image_url" alt />
+        </swiper-item>
+      </swiper>
+
+      <!-- nav starts -->
+      <nav-home></nav-home>
+      <!-- nav ends -->
+
+      <!-- recommend starts -->
+
+      <recommends :info="recommendOne" :infoTwo="recommendTwo" :infoThree="recommendThree"></recommends>
     </main>
     <!-- recommend ends -->
   </div>
@@ -49,27 +45,31 @@ export default {
     NavHome,
     Recommends
   },
-  data () {
+  data() {
     return {
       // 考虑数据放在哪里和数据格式
       // props是别人给我传的
-      bannerList: {}
+      bannerList: {},
+      recommendOne: [],
+      recommendTwo: [],
+      recommendThree: []
     }
   },
 
   methods: {
-    onchange (index) {
-      console.log(index)
-      console.log(this.$refs['my-swiper'])
+    onchange(index) {
+      // console.log(index)
+      // console.log(this.$refs['my-swiper'])
     }
   },
-  created () {
+  created() {
     getBanner()
       .then(res => {
-        console.log(res)
         if (res.code === 1) {
           this.bannerList = res.data.h5_recommend_male_rotation_map
-          console.log(res.data.h5_recommend_male_rotation_map)
+          this.recommendOne = res.data.h5_recommend_male_fine_works
+          this.recommendTwo = res.data.h5_recommend_male_hot_serial
+          this.recommendThree = res.data.h5_recommend_male_new_arrival
         } else {
           // 需要用vant组件左错误提示
           console.log(res.message)
@@ -87,7 +87,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
-  .main {
+  .main_index {
     flex: 1;
     overflow-y: auto;
     padding: 0 16px;
