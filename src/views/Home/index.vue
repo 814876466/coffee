@@ -12,6 +12,17 @@
         <img src="../../assets/img/logo.png" alt />
       </swiper-item>
     </swiper>
+
+    <!-- nav starts -->
+    <nav-home></nav-home>
+    <!-- nav ends -->
+
+    <!-- recommend starts -->
+
+    <main class="main_index">
+      <recommends></recommends>
+    </main>
+    <!-- recommend ends -->
   </div>
 </template>
 
@@ -26,13 +37,17 @@
 import HeaderHome from './componments/HeaderHome/HeaderHome'
 import { Swiper, SwiperItem } from '@/components/swipper/index.js'
 import { getBanner } from '@/api/comics.js'
+import NavHome from './componments/NavHome'
+import Recommends from './componments/Recommends'
 export default {
   name: 'Home',
 
   components: {
     HeaderHome,
     Swiper,
-    SwiperItem
+    SwiperItem,
+    NavHome,
+    Recommends
   },
   data () {
     return {
@@ -72,13 +87,18 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
-}
-.comic_cover {
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: cover;
-  border-radius: 4px;
+  .main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 16px;
+  }
+  .comic_cover {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 4px;
+  }
 }
 </style>
