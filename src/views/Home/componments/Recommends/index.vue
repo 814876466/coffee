@@ -111,6 +111,77 @@
       </div>
     </div>
     <!-- block3 ends -->
+    <div class="blocks"></div>
+    <!-- block4 starts -->
+    <div class="recommend_block">
+      <div class="home_recommend_header">
+        <div class="home_recommend_title">热门连载</div>
+        <div class="home_recommend_more">更多&gt;</div>
+      </div>
+      <div>
+        <div class="home_recommend_comics fourClassic">
+          <div
+            class="home_recommend_comic"
+            v-for="(item,index) in infoFour"
+            :key="index"
+            v-show="index<=1"
+          >
+            <div class="comic_cover_container">
+              <div class="comic_cover">
+                <img :src="item.image_ext_url" alt />
+              </div>
+              <!---->
+              <div class="comic_cover_info">
+                <div class="comic_cover_titleBox">
+                  <!---->
+                  <div class="comic_cover_title">{{item.extra.name}}</div>
+                  <!---->
+                </div>
+                <div class="comic_cover_desc">{{item.extra.watching_focus}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!-- block4 end -->
+
+    <div class="blocks"></div>
+    <!-- block6 starts -->
+    <div class="recommend_block">
+      <div class="home_recommend_header">
+        <div class="home_recommend_title">本周推荐</div>
+        <div class="home_recommend_more">更多&gt;</div>
+      </div>
+      <div>
+        <div class="home_recommend_comics threeRow">
+          <div
+            class="home_recommend_comic"
+            v-for="(item,index) in infoSix"
+            :key="index"
+            v-show="index<=2"
+          >
+            <div class="comic_cover_container">
+              <div class="comic_cover">
+                <img :src="item.image_ext_url" alt />
+              </div>
+              <!---->
+              <div class="comic_cover_info">
+                <div class="comic_cover_titleBox">
+                  <!---->
+                  <div class="comic_cover_title">{{item.extra.name}}</div>
+                  <!---->
+                </div>
+                <div class="comic_cover_desc">{{item.extra.watching_focus}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!-- block6 ends -->
   </div>
 </template>
 
@@ -127,6 +198,14 @@ export default {
       required: true
     },
     infoThree: {
+      type: Array,
+      required: true
+    },
+    infoFour: {
+      type: Array,
+      required: true
+    },
+    infoSix: {
       type: Array,
       required: true
     }
@@ -345,7 +424,7 @@ export default {
 }
 
 .home_recommend_comics.threeRow .home_recommend_comic .comic_cover {
-  height: 15px;
+  height: 150px;
 }
 
 .home_recommend_comics.threeRow .home_recommend_comic:first-child {
@@ -380,7 +459,7 @@ export default {
 }
 
 .home_recommend_comics.threeColumn .home_recommend_comic .comic_cover {
-  width: 1160px !important;
+  // width: 1160px !important;
   height: 90px;
 }
 
@@ -440,6 +519,7 @@ export default {
 .comic_cover_horizontal_info .comic_cover_horizontal_title {
   margin-top: 4px;
   color: #333;
+  font-size: 14px;
   line-height: 24px;
   padding-bottom: 8px;
 }
@@ -458,7 +538,9 @@ export default {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 8px;
+  height: 18px;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .comic_cover_horizontal_info .comic_cover_horizontal_author:nth-child(2) {
@@ -480,4 +562,6 @@ export default {
 }
 
 /*  block3 ends*/
+
+/*rest*/
 </style>

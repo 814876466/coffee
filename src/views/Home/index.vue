@@ -16,7 +16,13 @@
 
       <!-- recommend starts -->
 
-      <recommends :info="recommendOne" :infoTwo="recommendTwo" :infoThree="recommendThree"></recommends>
+      <recommends
+        :info="recommendOne"
+        :infoTwo="recommendTwo"
+        :infoThree="recommendThree"
+        :infoFour="recommendFour"
+        :infoSix="recommendSix"
+      ></recommends>
     </main>
     <!-- recommend ends -->
   </div>
@@ -45,24 +51,26 @@ export default {
     NavHome,
     Recommends
   },
-  data() {
+  data () {
     return {
       // 考虑数据放在哪里和数据格式
       // props是别人给我传的
       bannerList: {},
       recommendOne: [],
       recommendTwo: [],
-      recommendThree: []
+      recommendThree: [],
+      recommendFour: [],
+      recommendSix: []
     }
   },
 
   methods: {
-    onchange(index) {
+    onchange (index) {
       // console.log(index)
       // console.log(this.$refs['my-swiper'])
     }
   },
-  created() {
+  created () {
     getBanner()
       .then(res => {
         if (res.code === 1) {
@@ -70,6 +78,8 @@ export default {
           this.recommendOne = res.data.h5_recommend_male_fine_works
           this.recommendTwo = res.data.h5_recommend_male_hot_serial
           this.recommendThree = res.data.h5_recommend_male_new_arrival
+          this.recommendFour = res.data.h5_recommend_male_popular_works
+          this.recommendSix = res.data.h5_recommend_male_xiaobian_recommend
         } else {
           // 需要用vant组件左错误提示
           console.log(res.message)
