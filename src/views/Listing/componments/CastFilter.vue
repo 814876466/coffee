@@ -43,7 +43,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
  .category_loaded {
             height: 100%;
             width: 100%;

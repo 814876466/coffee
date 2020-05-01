@@ -8,7 +8,7 @@
    :catesPay='catePay'
    ></cate-list>
 
-   <main class=".main_index">
+   <main class="main_index">
       <cast-filter
       :filterItem='filters'
       ></cast-filter>
