@@ -13,6 +13,9 @@ import More from '../views/More'
 import Ranking from '../views/Ranking'
 import Search from '../views/Search'
 import SearchResult from '../views/SearchResult'
+import RankCom from '../views/Ranking/RankCom'
+import RankShare from '../views/Ranking/RankShare'
+import RankRead from '../views/Ranking/RankRead'
 
 Vue.use(VueRouter)
 
@@ -35,10 +38,29 @@ const routes = [
   { path: '/listing', component: Listing },
   { path: '/me', component: Me },
   { path: '/more', component: More },
-  { path: '/Ranking', component: Ranking },
+  {
+    path: '/Ranking',
+    component: Ranking,
+    redirect: '/Ranking/Rankread',
+    children: [
+      {
+        path: 'rankcom',
+        component: RankCom
+      },
+      {
+        path: 'Rankshare',
+        component: RankShare
+      },
+      {
+        path: 'Rankread',
+        component: RankRead
+      }
+
+    ]
+
+  },
   { path: '/search', component: Search },
   { path: '/searchresult', component: SearchResult },
-
   { path: '/', redirect: '/home' }
 ]
 
