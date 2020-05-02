@@ -14,15 +14,16 @@ export const getCate = () => {
     }
   })
 }
-export const getFilter = () => {
+/* eslint-disable */
+export const getFilter = (cate_id, end_status, comic_pay_status) => {
   return request({
     url: '/test/wbcomic/comic/filter_result',
     method: 'GET',
     // 查询字符串参数
     params: {
-      cate_id: '0',
-      end_status: '0',
-      comic_pay_status: '0',
+      cate_id,
+      end_status,
+      comic_pay_status,
       page_num: '1',
       rows_num: '20',
       order: '',
@@ -31,3 +32,4 @@ export const getFilter = () => {
     }
   })
 }
+/* eslint-enabled */

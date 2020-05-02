@@ -2,8 +2,11 @@
 <div>
 <!-- listing1 starts -->
   <div class="cate_list filter_list highList">
-    <div v-for="item in cates" :key="item.cate_id">
-     <div class="cate_list_item filter_item">
+    <div v-for="(item, index ) in cates" :key="item.cate_id">
+     <div class="cate_list_item filter_item"
+     :class="activeCate===index ? 'filter_active_item_red':''"
+     @click="handleCate(item,index)"
+     >
             {{item.cate_cn_name}}
         </div>
     </div>
@@ -15,16 +18,22 @@
     <div class="showFilterLayout">
         <div class="show_filter">
             <div class="end_status_list filter_list">
-                <div v-for="item in catesEnd " :key="item.end_status" >
-                   <div class="end_status_list_item filter_item">
+                <div v-for="(item,index) in catesEnd " :key="item.end_status" >
+                   <div class="end_status_list_item filter_item"
+                   :class="activeIndex===index ? 'filter_active_item_red':''"
+                   @click="handleClick(item,index)"
+                   >
                     {{item.end_status_name}}
                     </div>
                 </div>
 
             </div>
             <div class="pay_status_list filter_list">
-                  <div v-for="item in catesPay " :key="item.comic_pay_status" >
-                    <div class="pay_status_list_item filter_item filter_active_item_red">
+                  <div v-for="(item, index) in catesPay " :key="item.comic_pay_status" >
+                    <div class="pay_status_list_item filter_item"
+                    :class="activePay===index ? 'filter_active_item_red':''"
+                    @click="handlePay(item,index)"
+                    >
                     {{item.comic_pay_status_name}}
                     </div>
                   </div>
@@ -52,6 +61,27 @@ export default {
     catesPay: {
       require: true,
       type: Array
+    }
+  },
+  data () {
+    return {
+      activeIndex: 0,
+      activeCate: 0,
+      activePay: 0
+    }
+  },
+  methods: {
+    handleClick (item, index) {
+      this.activeIndex = index
+      this.$emit('click', { item, index })
+    },
+    handleCate (item, index) {
+      this.activeCate = index
+      this.$emit('click', { item, index })
+    },
+    handlePay (item, index) {
+      this.activePay = index
+      this.$emit('click', { item, index })
     }
   }
 }

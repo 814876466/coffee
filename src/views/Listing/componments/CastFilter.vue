@@ -45,46 +45,46 @@ export default {
 
 <style lang="scss" scoped>
 
- .category_loaded {
-            height: 100%;
-            width: 100%;
-            display: flex;
-     justify-content: space-between;
-     align-items: center;
-     flex-wrap: wrap;
+.category_loaded {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
 
-        }
+    }
 
-        .comic_cover_container {
-            width: 150px;
-            height: 161px;
-            /* flex: 1; */
+    .comic_cover_container {
+        width: 150px;
+        height: 161px;
+        /* flex: 1; */
 
-        }
+    }
 
-        .comic_cover_container img {
-            border-radius: 8px;
-            height: 105px;
-            width: 100%;
-        }
+    .comic_cover_container img {
+        border-radius: 8px;
+        height: 105px;
+        width: 100%;
+    }
 
-        .comic_cover_info {
-            width: 100%;
-            height: 56px;
+    .comic_cover_info {
+        width: 100%;
+        height: 56px;
 
-        }
+    }
 
-        .comic_cover_title {
-            height: 22px;
-            line-height: 22px;
-            font-size: 14px;
-            color: #666;
-        }
+    .comic_cover_title {
+        height: 22px;
+        line-height: 22px;
+        font-size: 14px;
+        color: #666;
+    }
 
-        .comic_cover_desc {
-            height: 20px;
-            line-height: 20px;
-            font-size: 12px;
-            color: #999;
-        }
+    .comic_cover_desc {
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        color: #999;
+    }
 </style>
