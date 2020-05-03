@@ -6,6 +6,8 @@
     <hot-search :hot="hotData" @toSearch="saveSearch"></hot-search>
     <history-search
     :historyRes="historySearchList"
+    @clearHistory="clearHis"
+    @toResult="toResultPage"
     ></history-search>
   </div>
 </template>
@@ -68,6 +70,17 @@ export default {
 
       window.localStorage.setItem('search', JSON.stringify(tmp))
       // 路由跳转到结果页面
+      this.toResultPage(keyword)
+    },
+    getSearch () {
+      const tmp = window.localStorage.getItem('search')
+      if (!tmp) {
+        return []
+      } else {
+        return JSON.parse(tmp)
+      }
+    },
+    toResultPage (keyword) {
       this.$router.push({
         path: '/searchresult',
         query: {
@@ -75,13 +88,9 @@ export default {
         }
       })
     },
-    getSearch () {
-      let his = window.localStorage.getItem
-      if (his) {
-        his = JSON.parse(his)
-      } else {
-        his = []
-      }
+    clearHis () {
+      window.localStorage.clear()
+      this.historySearchList = []
     }
   },
   created () {

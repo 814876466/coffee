@@ -1,20 +1,50 @@
 <template>
-  <div class="hot_search history">
+  <div class="hot_search history"
+  v-if="historyRes.length>0"
+  >
                 <div class="hot_search_header">
                     <div class="search_title">搜索历史</div>
                     <div class="search_icon clear">
-                        <i class="iconfont icon-bin"></i>
+                        <i class="iconfont icon-bin"
+                        @click="clear"
+                        ></i>
                     </div>
                 </div>
                 <ul class="hot_search_conent">
-                    <li class="search_label"><span class="search_label_text">我</span></li>
+                    <li class="search_label"
+                    v-for="(item, index) in historyRes"
+                    :key="index"
+                    @click="toRes(item)"
+                    >
+                        <span class="search_label_text">{{item}}</span>
+                        </li>
                 </ul>
  </div>
 </template>
 
 <script>
 export default {
-  name: 'HistorySearch'
+  name: 'HistorySearch',
+  props: {
+    historyRes: {
+      type: Array
+    }
+
+  },
+  data () {
+    return {
+      goSearch: ''
+    }
+  },
+  methods: {
+    clear () {
+      this.$emit('clearHistory')
+    },
+    toRes (item) {
+      this.goSearch = item
+      this.$emit('toResult', this.goSearch)
+    }
+  }
 }
 </script>
 
