@@ -13,3 +13,16 @@ export const getHot = () => {
     }
   })
 }
+
+export const getSearchResult = (word) => {
+  return request({
+    url: '/test/wbcomic/home/search',
+    method: 'GET',
+    // 查询字符串参数
+    params: {
+      word,
+      page_num: 1,
+      _type: 'h5'
+    }
+  })
+}

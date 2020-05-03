@@ -15,8 +15,8 @@
 <script>
 import HistorySearch from './componments/HistorySearch'
 import HotSearch from './componments/HotSearch'
-import SearchInput from './componments/SearchInput'
-import { getHot } from '../../api/search.js'
+import SearchInput from '@/components/input/SearchInput'
+import { getHot } from '@/api/search.js'
 export default {
   name: 'Search',
   data () {
