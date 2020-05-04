@@ -17,7 +17,7 @@
           >
             <div class="comic_cover_container">
               <div class="comic_cover">
-                <img :src="item.image_ext_url" alt />
+                <img v-lazy="item.image_ext_url" alt />
               </div>
               <!---->
               <div class="comic_cover_info">
@@ -91,7 +91,7 @@
           >
             <div class="comic_horizontal_container">
               <div class="comic_cover comice_horizontal_cover">
-                <img :src="item.image_ext_url" alt />
+                <img v-lazy="item.image_ext_url" alt />
               </div>
               <div class="comic_cover_horizontal_info">
                 <div class="comic_cover_horizontal_title">{{item.extra.name}}</div>
@@ -128,7 +128,7 @@
           >
             <div class="comic_cover_container">
               <div class="comic_cover">
-                <img :src="item.image_ext_url" alt />
+                <img v-lazy="item.image_ext_url" alt />
               </div>
               <!---->
               <div class="comic_cover_info">
@@ -164,7 +164,7 @@
           >
             <div class="comic_cover_container">
               <div class="comic_cover">
-                <img :src="item.image_ext_url" alt />
+                <img v-lazy="item.image_ext_url" alt />
               </div>
               <!---->
               <div class="comic_cover_info">

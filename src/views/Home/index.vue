@@ -3,8 +3,10 @@
     <!-- 首页头部 begin -->
     <header-home></header-home>
     <!-- 首页头部 end -->
-    <main class="main_index">
-      <swiper :autoplay="1000" :loop="true" @change="onchange" ref="my-swiper">
+    <main class="main_index" ref="scrolls">
+      <div>
+        <!-- 因为betterscroll只认第一个子元素 所以要用div包一下 -->
+          <swiper :autoplay="1000" :loop="true" @change="onchange" ref="my-swiper">
         <swiper-item v-for="item in bannerList" :key="item.info_id" class="comic_cover">
           <img :src="item.image_url" alt />
         </swiper-item>
@@ -23,6 +25,8 @@
         :infoFour="recommendFour"
         :infoSix="recommendSix"
       ></recommends>
+      </div>
+
     </main>
     <!-- recommend ends -->
   </div>
@@ -41,6 +45,7 @@ import { Swiper, SwiperItem } from '@/components/swipper/index.js'
 import { getBanner } from '@/api/comics.js'
 import NavHome from './componments/NavHome'
 import Recommends from './componments/Recommends'
+import BScroll from 'better-scroll'
 export default {
   name: 'Home',
 
@@ -88,6 +93,11 @@ export default {
       .catch(err => {
         alert('network error', err)
       })
+  },
+  mounted () {
+    /* eslint-disable */
+    new BScroll(this.$refs.scrolls)
+    /* eslint-enable */
   }
 }
 </script>
@@ -99,7 +109,7 @@ export default {
   height: 100%;
   .main_index {
     flex: 1;
-    overflow-y: auto;
+     overflow-y: auto;
     padding: 0 16px;
   }
   .comic_cover {
