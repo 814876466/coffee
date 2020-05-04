@@ -15,7 +15,7 @@ export default {
   name: 'Navigator',
   props: {
     titleName: {
-      default: 'Title',
+      default: '',
       type: String
     }
   }
