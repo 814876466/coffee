@@ -6,6 +6,7 @@
         <div class="searchList"
         v-for="item in list"
         :key="item.comic_id"
+        @click="toDetail(item.comic_id)"
         >
           <div class="search_list_img">
             <div class="comic_cover">
@@ -92,6 +93,14 @@ export default {
         }
       }).catch(err => {
         alert(err)
+      })
+    },
+    toDetail (id) {
+      this.$router.push({
+        path: '/details',
+        query: {
+          id
+        }
       })
     }
   },
