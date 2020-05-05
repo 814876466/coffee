@@ -1,6 +1,8 @@
 <template>
  <div class="nav_normal">
-        <div class="nav_left">
+        <div class="nav_left"
+        @click="goBack"
+        >
             <i class="iconfont icon-houtui"></i>
         </div>
         <div class="nav_middle">
@@ -17,6 +19,12 @@ export default {
     titleName: {
       default: '',
       type: String
+    }
+  },
+  methods: {
+    goBack () {
+      // ?使用编程式导航?
+      this.$router.back()
     }
   }
 }

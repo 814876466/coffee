@@ -10,7 +10,7 @@
       <div class="nav_mine">
         <!-- <i class="iconfont icon-wo1"></i> -->
       </div>
-      <div class="nav_serach">
+      <div class="nav_serach" @click="goSearch">
         <!-- <i class="iconfont icon-fangdajing"></i> -->
       </div>
       <div class="nav_switch_gender female_btn">
@@ -22,7 +22,12 @@
 
 <script>
 export default {
-  name: 'HeaderHome'
+  name: 'HeaderHome',
+  methods: {
+    goSearch () {
+      this.$router.push('/search')
+    }
+  }
 }
 </script>
 

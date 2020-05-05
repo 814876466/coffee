@@ -14,6 +14,7 @@
             v-for="(item,index) in info"
             :key="item.object_id"
             v-show="index<=2"
+            @click="toSearch(item.object_id)"
           >
             <div class="comic_cover_container">
               <div class="comic_cover">
@@ -50,6 +51,7 @@
             v-for="(item,index) in infoTwo"
             :key="item.object_id"
             v-show="index<=3"
+            @click="toSearch(item.object_id)"
           >
             <div class="comic_cover_container" style="width: 100%;">
               <div class="comic_cover">
@@ -88,6 +90,7 @@
             v-for="(item,index) in infoThree"
             :key="item.object_id"
             v-show="index<=2"
+            @click="toSearch(item.object_id)"
           >
             <div class="comic_horizontal_container">
               <div class="comic_cover comice_horizontal_cover">
@@ -125,6 +128,7 @@
             v-for="(item,index) in infoFour"
             :key="index"
             v-show="index<=1"
+            @click="toSearch(item.object_id)"
           >
             <div class="comic_cover_container">
               <div class="comic_cover">
@@ -188,6 +192,11 @@
 <script>
 export default {
   name: 'Recommends',
+  data () {
+    return {
+      searchId: ''
+    }
+  },
   props: {
     info: {
       type: Array,
@@ -208,6 +217,12 @@ export default {
     infoSix: {
       type: Array,
       required: true
+    }
+  },
+  methods: {
+    toSearch (id) {
+      this.searchId = id
+      this.$emit('toDetail', this.searchId)
     }
   }
 }

@@ -46,27 +46,85 @@ import 'nprogress/nprogress.css'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/home', component: Home },
+  {
+    path: '/home',
+    component: Home,
+    meta: { enterActiveClass: '', leaveActiveClass: 'animated dealy-1s' }
+  },
 
   {
     path: '/about',
-    component: About
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: About,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    }
+
   },
-  { path: '/broadcasts', component: Broadcasts },
-  { path: '/register', component: Register },
-  { path: '/login', component: Login },
-  { path: '/details', component: Details },
-  { path: '/feedback', component: Feedback },
-  { path: '/finished', component: Finished },
-  { path: '/history', component: History },
+  {
+    path: '/broadcasts',
+    component: Broadcasts,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    }
+  },
+  {
+    path: '/register',
+    component: Register,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    }
+  },
+  {
+    path: '/login',
+    component: Login,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    }
+  },
+  {
+    path: '/details',
+    component: Details,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    }
+  },
+  {
+    path: '/feedback',
+    component: Feedback,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    }
+  },
+  {
+    path: '/finished',
+    component: Finished,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    }
+  },
+  {
+    path: '/history',
+    component: History,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    }
+  },
   { path: '/listing', component: Listing },
   {
     path: '/me',
     component: Me,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    },
     beforeEnter (to, from, next) {
       if (window.isLogined) {
         next()
@@ -76,11 +134,22 @@ const routes = [
     }
 
   },
-  { path: '/more', component: More },
+  {
+    path: '/more',
+    component: More,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    }
+  },
   {
     path: '/Ranking',
     component: Ranking,
     redirect: '/Ranking/Rankread',
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    },
     children: [
       {
         path: 'rankcom',
@@ -98,8 +167,22 @@ const routes = [
     ]
 
   },
-  { path: '/search', component: Search },
-  { path: '/searchresult', component: SearchResult },
+  {
+    path: '/search',
+    component: Search,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    }
+  },
+  {
+    path: '/searchresult',
+    component: SearchResult,
+    meta: {
+      enterActiveClass: 'animated slideInRight',
+      leaveActiveClass: 'animated slideOutRight'
+    }
+  },
   { path: '/', redirect: '/home' }
 ]
 

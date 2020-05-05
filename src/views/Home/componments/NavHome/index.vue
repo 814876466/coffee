@@ -1,18 +1,18 @@
 <template>
   <div class="home_menu">
-    <div class="home_menu_item">
+    <div class="home_menu_item" @click="goBroad">
       <i class="iconfont icon-horn"></i>
       <p>放送表</p>
     </div>
-    <div class="home_menu_item">
+    <div class="home_menu_item" @click="goList">
       <i class="iconfont icon-leimupinleifenleileibie"></i>
       <p>分类</p>
     </div>
-    <div class="home_menu_item">
+    <div class="home_menu_item" @click="goRank">
       <i class="iconfont icon-bangdan"></i>
       <p>榜单</p>
     </div>
-    <div class="home_menu_item">
+    <div class="home_menu_item" @click="goFinish">
       <i class="iconfont icon-wanjie"></i>
       <p>完结</p>
     </div>
@@ -21,7 +21,22 @@
 
 <script>
 export default {
-  name: 'NavHome'
+  name: 'NavHome',
+  methods: {
+    goBroad () {
+      this.$router.push('/broadcast')
+    },
+    goList () {
+      this.$router.push('/listing')
+    },
+    goRank () {
+      this.$router.push('/ranking')
+    },
+    goFinish () {
+      this.$router.push('/finished')
+    }
+
+  }
 }
 </script>
 

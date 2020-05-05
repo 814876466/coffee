@@ -1,6 +1,12 @@
 /* eslint-disable no-unreachable */
 <template>
-  <div class="page-listing">
+ <!-- <transition
+ appear
+    enter-active-class="animated slideInRight"
+    leave-active-class="animated slideOutLeft"
+
+    > -->
+    <div class="page-listing">
     <navigator :titleName="title"></navigator>
 
     <cate-list
@@ -14,6 +20,9 @@
       <cast-filter :filterItem="filters"></cast-filter>
     </main>
   </div>
+
+    <!-- </transition> -->
+
 </template>
 
 <script>
@@ -95,6 +104,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 .page-listing {
+  position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+background: #fff;
+z-index: 999;
   display: flex;
   flex-direction: column;
   height: 100%;

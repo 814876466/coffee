@@ -24,6 +24,7 @@
         :infoThree="recommendThree"
         :infoFour="recommendFour"
         :infoSix="recommendSix"
+        @toDetail="toDeatilPage"
       ></recommends>
       </div>
 
@@ -70,9 +71,16 @@ export default {
   },
 
   methods: {
-    onchange (index) {
-      // console.log(index)
-      // console.log(this.$refs['my-swiper'])
+    onChange (index) {
+      console.log('hello', index)
+    },
+    toDeatilPage (id) {
+      this.$router.push({
+        path: '/details',
+        query: {
+          id
+        }
+      })
     }
   },
   created () {
@@ -104,6 +112,12 @@ export default {
 
 <style lang="scss" scoped>
 .page-home {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+background: #fff;
+z-index: 999;
   display: flex;
   flex-direction: column;
   height: 100%;
