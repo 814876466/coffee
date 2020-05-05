@@ -5,29 +5,31 @@
     <!-- 首页头部 end -->
     <main class="main_index" ref="scrolls">
       <div>
-        <!-- 因为betterscroll只认第一个子元素 所以要用div包一下 -->
-          <swiper :autoplay="1000" :loop="true" @change="onchange" ref="my-swiper">
-        <swiper-item v-for="item in bannerList" :key="item.info_id" class="comic_cover">
-          <img :src="item.image_url" alt />
-        </swiper-item>
-      </swiper>
-
-      <!-- nav starts -->
-      <nav-home></nav-home>
-      <!-- nav ends -->
-
-      <!-- recommend starts -->
-
-      <recommends
-        :info="recommendOne"
-        :infoTwo="recommendTwo"
-        :infoThree="recommendThree"
-        :infoFour="recommendFour"
-        :infoSix="recommendSix"
-        @toDetail="toDeatilPage"
-      ></recommends>
+        <swiper
+          class="my-swiper"
+          @change="onChange"
+          :autoplay="1000"
+          :loop="true"
+          v-if="bannerList.length > 0"
+          ref="my-swiper"
+        >
+          <swiper-item v-for="item in bannerList" :key="item.info_id" class="comic_cover">
+            <img :src="item.image_url" alt />
+          </swiper-item>
+        </swiper>
+        <!-- nav starts -->
+        <nav-home></nav-home>
+        <!-- nav ends -->
+        <!-- recommend starts -->
+        <recommends
+          :info="recommendOne"
+          :infoTwo="recommendTwo"
+          :infoThree="recommendThree"
+          :infoFour="recommendFour"
+          :infoSix="recommendSix"
+          @toDetail="toDeatilPage"
+        ></recommends>
       </div>
-
     </main>
     <!-- recommend ends -->
   </div>
@@ -57,6 +59,7 @@ export default {
     NavHome,
     Recommends
   },
+
   data () {
     return {
       // 考虑数据放在哪里和数据格式
@@ -72,7 +75,7 @@ export default {
 
   methods: {
     onChange (index) {
-      console.log('hello', index)
+      // console.log('hello', index)
     },
     toDeatilPage (id) {
       this.$router.push({
@@ -112,27 +115,31 @@ export default {
 
 <style lang="scss" scoped>
 .page-home {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-background: #fff;
-z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   height: 100%;
   .main_index {
     flex: 1;
-     overflow-y: auto;
+    overflow-y: auto;
     padding: 0 16px;
   }
   .comic_cover {
     width: 100%;
-    height: 100%;
+    height: 214px;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: cover;
-    border-radius: 4px;
+    border-radius: 8px;
+    img{
+      width:100%;
+      height: 100%;
+    }
   }
 }
 </style>
