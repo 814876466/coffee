@@ -18,7 +18,7 @@
           </swiper-item>
         </swiper>
         <!-- nav starts -->
-        <nav-home></nav-home>
+        <nav-home @goSea="goDown"></nav-home>
         <!-- nav ends -->
         <!-- recommend starts -->
         <recommends
@@ -74,10 +74,14 @@ export default {
   },
 
   methods: {
+    goDown () {
+      this.$router.push('/listing')
+    },
     onChange (index) {
       // console.log('hello', index)
     },
     toDeatilPage (id) {
+      console.log(id)
       this.$router.push({
         path: '/details',
         query: {
@@ -136,8 +140,8 @@ export default {
     background-position: 50%;
     background-size: cover;
     border-radius: 8px;
-    img{
-      width:100%;
+    img {
+      width: 100%;
       height: 100%;
     }
   }

@@ -1,18 +1,18 @@
 <template>
   <div class="home_menu">
-    <div class="home_menu_item" @click="goBroad">
+    <div class="home_menu_item" @dblclick="goSea">
       <i class="iconfont icon-horn"></i>
       <p>放送表</p>
     </div>
-    <div class="home_menu_item" @click="goList">
+    <div class="home_menu_item">
       <i class="iconfont icon-leimupinleifenleileibie"></i>
       <p>分类</p>
     </div>
-    <div class="home_menu_item" @click="goRank">
+    <div class="home_menu_item">
       <i class="iconfont icon-bangdan"></i>
       <p>榜单</p>
     </div>
-    <div class="home_menu_item" @click="goFinish">
+    <div class="home_menu_item">
       <i class="iconfont icon-wanjie"></i>
       <p>完结</p>
     </div>
@@ -23,20 +23,29 @@
 export default {
   name: 'NavHome',
   methods: {
-    goBroad () {
-      this.$router.push('/broadcast')
-    },
-    goList () {
-      this.$router.push('/listing')
-    },
-    goRank () {
-      this.$router.push('/ranking')
-    },
-    goFinish () {
-      this.$router.push('/finished')
-    }
+    goSea () {
+      this.$emit('goSea')
+      console.log(111111)
 
+      this.$router.push('/search')
+    }
   }
+  // methods: {
+  //   goBroad () {
+  //     console.log(1)
+  //     this.$router.push('/broadcast')
+  //   },
+  //   goList () {
+  //     this.$router.push('/listing')
+  //   },
+  //   goRank () {
+  //     this.$router.push('/ranking')
+  //   },
+  //   goFinish () {
+  //     this.$router.push('/finished')
+  //   }
+
+  // }
 }
 </script>
 

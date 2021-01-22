@@ -91,6 +91,7 @@
             :key="item.object_id"
             v-show="index<=2"
             @click="toSearch(item.object_id)"
+
           >
             <div class="comic_horizontal_container">
               <div class="comic_cover comice_horizontal_cover">
@@ -130,7 +131,8 @@
             v-show="index<=1"
             @click="toSearch(item.object_id)"
           >
-            <div class="comic_cover_container">
+            <div class="comic_cover_container"
+            >
               <div class="comic_cover">
                 <img v-lazy="item.image_ext_url" alt />
               </div>
@@ -221,7 +223,16 @@ export default {
   },
   methods: {
     toSearch (id) {
+      console.log('com')
+
+      this.$router.push({
+        path: '/details',
+        query: {
+          id
+        }
+      })
       this.searchId = id
+
       this.$emit('toDetail', this.searchId)
     }
   }

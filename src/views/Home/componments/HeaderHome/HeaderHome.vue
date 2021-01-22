@@ -7,14 +7,11 @@
     </div>
     <div class="nav_middle"><span class="nav_title"></span></div>
     <div class="nav_right">
-      <div class="nav_mine">
-        <!-- <i class="iconfont icon-wo1"></i> -->
+      <div class="nav_mine" @click="goMe">
       </div>
       <div class="nav_serach" @click="goSearch">
-        <!-- <i class="iconfont icon-fangdajing"></i> -->
       </div>
       <div class="nav_switch_gender female_btn">
-        <!-- <i class="iconfont icon-nansheng"></i> -->
       </div>
     </div>
   </header>
@@ -26,6 +23,9 @@ export default {
   methods: {
     goSearch () {
       this.$router.push('/search')
+    },
+    goMe () {
+      this.$router.push('/me')
     }
   }
 }
