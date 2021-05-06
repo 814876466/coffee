@@ -3,7 +3,7 @@
   v-if="historyRes.length>0"
   >
                 <div class="hot_search_header">
-                    <div class="search_title">搜索历史</div>
+                    <div class="search_title">history</div>
                     <div class="search_icon clear">
                         <i class="iconfont icon-bin"
                         @click="clear"

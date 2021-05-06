@@ -3,13 +3,13 @@
     <navigator :titleName="title"></navigator>
     <ul>
         <li>
-          <router-link to="/ranking/rankread" class="router-link">阅读榜</router-link>
+          <router-link to="/ranking/rankread" class="router-link">Reading Ranking</router-link>
         </li>
         <li>
-          <router-link to="/ranking/rankshare" class="router-link">新作榜</router-link>
+          <router-link to="/ranking/rankshare" class="router-link">Popular Ranking </router-link>
         </li>
         <li>
-          <router-link to="/ranking/rankcom" class="router-link">综合榜</router-link>
+          <router-link to="/ranking/rankcom" class="router-link">Weekly Ranking</router-link>
         </li>
     </ul>
     <main class="main_index">

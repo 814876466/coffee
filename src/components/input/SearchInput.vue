@@ -8,7 +8,7 @@
                         >
                         </i>
                     </span>
-                    <input placeholder="请输入搜索关键字"
+                    <input placeholder="please searching"
                     v-model="searchVal"
                     >
                     <span class="search_clear_icon">
@@ -23,10 +23,10 @@
 
                 <span v-if="searchVal===''"
                 @click="$router.back()"
-                >取消</span>
+                >Cancel</span>
                 <span v-else
                 @click="sendSearch"
-                >搜索</span>
+                >Search</span>
 
             </div>
 </div>
@@ -58,19 +58,6 @@ export default {
     }
 
   }
-  // watch: {
-  //   searchVal (newVal, oldVal) {
-  //     // 判断newVal是否有值
-
-  //     // ？思考？只要 searchVal 发生变化，就发生ajax请求
-  //     // 先输入 z
-  //     // 在输入 h
-  //     // 先后发了两个请求 一个是  z 一个是 zh
-  //     // ajax请求的响应顺序我们是控制不了的，就有可能出现，我需要展示在页面上的是 zh 的结果
-  //     // 但是显示的是  z 的结果
-
-  //   }
-  // }
 }
 </script>
 

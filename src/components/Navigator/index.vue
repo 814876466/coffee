@@ -23,7 +23,6 @@ export default {
   },
   methods: {
     goBack () {
-      // ?使用编程式导航?
       this.$router.back()
     }
   }

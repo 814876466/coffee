@@ -1,25 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-// 异步引入router
-// const About = () => import('../views/About')
-// const Broadcasts = () => ('../views/Broadcasts')
-// const Details = () => ('../views/Details')
-// const Feedback = () => ('../views/Feedback')
-// const Finished = () => ('../views/Finished')
-// const History = () => ('../views/History')
-// const Home = () => ('../views/Home')
-// const Listing = () => ('../views/Listing')
-// const Me = () => ('../views/Me')
-// const More = () => ('../views/More')
-// const Ranking = () => ('../views/Ranking')
-// const Search = () => ('../views/Search')
-// const SearchResult = () => ('../views/SearchResult')
-// const RankCom = () => ('../views/Ranking/RankCom')
-// const RankShare = () => ('../views/Ranking/RankShare')
-// const RankRead = () => ('../views/Ranking/RankRead')
-// const Register = () => ('../views/Register')
-// const Login = () => ('../views/Login')
 import About from '../views/About'
 import Broadcasts from '../views/Broadcasts'
 import Details from '../views/Details'

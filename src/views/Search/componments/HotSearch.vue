@@ -2,7 +2,7 @@
 <div class="search_page">
                 <div class="hot_search">
                     <div class="hot_search_header">
-                        <div class="search_title">热门搜索</div>
+                        <div class="search_title">Search History</div>
                         <div class="search_icon refresh"
                     @click="fresh"
                         >

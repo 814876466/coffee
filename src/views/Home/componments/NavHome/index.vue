@@ -2,19 +2,19 @@
   <div class="home_menu">
     <div class="home_menu_item" @dblclick="goSea">
       <i class="iconfont icon-horn"></i>
-      <p>放送表</p>
+      <p>Cast</p>
     </div>
     <div class="home_menu_item">
       <i class="iconfont icon-leimupinleifenleileibie"></i>
-      <p>分类</p>
+      <p>Category</p>
     </div>
     <div class="home_menu_item">
       <i class="iconfont icon-bangdan"></i>
-      <p>榜单</p>
+      <p>Ranking</p>
     </div>
     <div class="home_menu_item">
       <i class="iconfont icon-wanjie"></i>
-      <p>完结</p>
+      <p>Finish</p>
     </div>
   </div>
 </template>

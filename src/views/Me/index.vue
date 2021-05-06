@@ -7,8 +7,8 @@
           <img src="//img.manhua.weibo.com/static/b/vcomic-h5/dist/img/avatar.78577bb7.png" />
           <!---->
         </div>
-        <p class="mine-nickname">戳我立即登录哦QAQ</p>
-        <p class="mine-vcoin">我的墨币: 0</p>
+        <p Pclass="mine-nickname">click me to login</p>
+        <p class="mine-vcoin">My Score: 0</p>
       </div>
     </div>
 
@@ -35,12 +35,12 @@ export default {
   },
   data () {
     return {
-      list: [{ name: '莫币充值', icon: 'icon-qianbi' },
-        { name: '我的关注', icon: 'icon-follow' },
-        { name: '浏览历史', icon: 'icon-lishi' },
-        { name: '意见反馈', icon: 'icon-yijian' },
-        { name: '已购作品', icon: 'icon-bought' },
-        { name: '购买作品管理', icon: 'icon-zidonggoumai' }
+      list: [{ name: 'buy', icon: 'icon-qianbi' },
+        { name: 'follow', icon: 'icon-follow' },
+        { name: 'history', icon: 'icon-lishi' },
+        { name: 'comments', icon: 'icon-yijian' },
+        { name: 'articles', icon: 'icon-bought' },
+        { name: 'manage', icon: 'icon-zidonggoumai' }
       ]
     }
   }

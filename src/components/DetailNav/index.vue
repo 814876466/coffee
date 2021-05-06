@@ -9,7 +9,7 @@
         <div class="nav_right">
             <span class="follow">
                 <i class="iconfont icon-follow"></i>
-                关注
+                Follow
             </span>
             <span class="share">
                 <i class="iconfont icon-ArtboardCopy1"></i>

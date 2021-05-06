@@ -4,8 +4,8 @@
     <!-- block1 begins -->
     <div class="recommend_block">
       <div class="home_recommend_header">
-        <div class="home_recommend_title">精品佳作</div>
-        <div class="home_recommend_more">更多&gt;</div>
+        <div class="home_recommend_title">Artiles</div>
+        <div class="home_recommend_more">More&gt;</div>
       </div>
       <div>
         <div class="home_recommend_comics threeClassic">
@@ -41,8 +41,8 @@
     <!-- block2 starts -->
     <div class="recommend_block">
       <div class="home_recommend_header">
-        <div class="home_recommend_title">人气作品</div>
-        <div class="home_recommend_more">更多&gt;</div>
+        <div class="home_recommend_title">Popular</div>
+        <div class="home_recommend_more">More&gt;</div>
       </div>
       <div>
         <div class="home_recommend_comics fourClassic">
@@ -79,8 +79,8 @@
     <!-- block3 start -->
     <div class="recommend_block">
       <div class="home_recommend_header">
-        <div class="home_recommend_title">最新上架</div>
-        <div class="home_recommend_more">更多&gt;</div>
+        <div class="home_recommend_title">New</div>
+        <div class="home_recommend_more">More&gt;</div>
       </div>
       <div>
         <!---->
@@ -119,8 +119,8 @@
     <!-- block4 starts -->
     <div class="recommend_block">
       <div class="home_recommend_header">
-        <div class="home_recommend_title">热门连载</div>
-        <div class="home_recommend_more">更多&gt;</div>
+        <div class="home_recommend_title">Recommends</div>
+        <div class="home_recommend_more">More&gt;</div>
       </div>
       <div>
         <div class="home_recommend_comics fourClassic">
@@ -157,8 +157,8 @@
     <!-- block6 starts -->
     <div class="recommend_block">
       <div class="home_recommend_header">
-        <div class="home_recommend_title">本周推荐</div>
-        <div class="home_recommend_more">更多&gt;</div>
+        <div class="home_recommend_title">Weekly Recommends</div>
+        <div class="home_recommend_more">More&gt;</div>
       </div>
       <div>
         <div class="home_recommend_comics threeRow">

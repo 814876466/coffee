@@ -19,7 +19,7 @@
                 </div>
                 <div class="comic_hot">
                   <i class="iconfont icon-hot"></i>
-                  <span>热度值：</span>
+                  <span>Hot：</span>
                   <span class="hot_num">{{hotNum}}</span>
                 </div>
               </div>
@@ -28,16 +28,16 @@
 
         </div>
 
-        <!-- 简介 -->
+        <!-- intro -->
         <div class="detail_wrap">
           <div class="details">
             <div class="bold">
-              简介
+              Intro
             </div>
             {{desc}}
           </div>
           <div class="author">
-            <span class="bold">作者：</span>
+            <span class="bold">Author</span>
             <div class="author_item">
                 <img src="http://tvax4.sinaimg.cn/default/images/default_avatar_male_180.gif">
               {{nickname}}
@@ -45,11 +45,11 @@
           </div>
         </div>
 
-        <!-- 评论 -->
+        <!-- Comments -->
        <div class="comment-box">
          <div class="comment-area">
            <div class="comment-title">
-             热门评论
+             Hot Comment
            </div>
          </div>
 
@@ -64,7 +64,7 @@
 
               >
                   <div class="comment-nickname comment-line content-line">
-                    <div class="bold">流年似水9997102511</div>
+                    <div class="bold">9997102511</div>
                     <div class="comment-time comment-line">2020-04-30</div>
                   </div>
                   <div class="comment-content comment-line content-line">
@@ -75,9 +75,9 @@
          </div>
 
        </div>
-       <!-- 更多评论 -->
+       <!-- more comments -->
        <div class="comment_more">
-           <button class="moreComment">更多精彩评论</button>
+           <button class="moreComment">more comments</button>
         </div>
 
     </main>
