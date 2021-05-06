@@ -20,7 +20,6 @@ import RankRead from '../views/Ranking/RankRead'
 import Register from '../views/Register'
 import Login from '../views/Login'
 
-// 引入 nprogress 的核心与他的样式
 import nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
 

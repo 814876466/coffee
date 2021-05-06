@@ -32,10 +32,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// 引入公用的mixins.scss
-// @import "../../assets/styles/mixins.scss";
-// 使用 @ 别名时，需要加一个 ~ 符号
-// !!!! @vue/cli 4.3.1 不需要加 ~
 @import '@/assets/style/mixins.scss';
 .index-header {
   @include border-bottom;

@@ -43,17 +43,12 @@ export default {
       } : false,
 
       on: {
-        // 这里不要使用箭头函数，否则里面的this指向指向的是当前的组件实例。而不是想要的 swiper 实例
         slideChangeTransitionEnd: function () {
-          // 触发一个自定义事件 change
-          // this.realIndex => this swiper实例
-          // this.$emit()   => this 当前组件实例
 
           that.$emit('change', this.realIndex)
         },
       },
     });
-    /* eslint-enable */
   }
 }
 </script>

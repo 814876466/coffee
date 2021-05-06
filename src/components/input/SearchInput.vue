@@ -48,7 +48,7 @@ export default {
   methods: {
     sendSearch () {
       if (this.searchVal === '') {
-        alert('你啥也没输入搜啥搜')
+        alert('why empty???')
       } else {
         this.$emit('seaVal', this.searchVal)
       }

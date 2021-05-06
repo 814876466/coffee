@@ -34,7 +34,7 @@ export default {
   name: 'Listing',
   data () {
     return {
-      title: '分类',
+      title: 'Category',
       cate: [],
       cateEnd: [],
       catePay: [],

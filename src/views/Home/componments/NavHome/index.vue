@@ -1,18 +1,18 @@
 <template>
   <div class="home_menu">
-    <div class="home_menu_item" @dblclick="goSea">
+    <div class="home_menu_item" @click="goSea">
       <i class="iconfont icon-horn"></i>
       <p>Cast</p>
     </div>
-    <div class="home_menu_item">
+    <div class="home_menu_item" @click="goListing">
       <i class="iconfont icon-leimupinleifenleileibie"></i>
       <p>Category</p>
     </div>
-    <div class="home_menu_item">
+    <div class="home_menu_item" @click="goRanking">
       <i class="iconfont icon-bangdan"></i>
       <p>Ranking</p>
     </div>
-    <div class="home_menu_item">
+    <div class="home_menu_item" @click="goFinished">
       <i class="iconfont icon-wanjie"></i>
       <p>Finish</p>
     </div>
@@ -25,27 +25,26 @@ export default {
   methods: {
     goSea () {
       this.$emit('goSea')
-      console.log(111111)
 
-      this.$router.push('/search')
+      this.$router.push('/broadcasts')
+    },
+
+    goRanking () {
+      this.$emit('goRanking')
+
+      this.$router.push('/Ranking')
+    },
+    goListing () {
+      this.$emit('goListing')
+
+      this.$router.push('/listing')
+    },
+    goFinished () {
+      this.$emit('goFinished')
+
+      this.$router.push('/finished')
     }
   }
-  // methods: {
-  //   goBroad () {
-  //     console.log(1)
-  //     this.$router.push('/broadcast')
-  //   },
-  //   goList () {
-  //     this.$router.push('/listing')
-  //   },
-  //   goRank () {
-  //     this.$router.push('/ranking')
-  //   },
-  //   goFinish () {
-  //     this.$router.push('/finished')
-  //   }
-
-  // }
 }
 </script>
 

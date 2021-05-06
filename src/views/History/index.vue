@@ -1,6 +1,6 @@
 <template>
   <div class="page-history">
-    <h1>historys</h1>
+    <h1>histories</h1>
   </div>
 </template>
 

@@ -20,7 +20,7 @@ export default {
   },
   data () {
     return {
-      title: '完结',
+      title: 'Finished Articles',
       endsWork: []
     }
   },

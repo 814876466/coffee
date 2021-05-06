@@ -1,8 +1,6 @@
 <template>
   <div class="page-home">
-    <!-- 首页头部 begin -->
     <header-home></header-home>
-    <!-- 首页头部 end -->
     <main class="main_index" ref="scrolls">
       <div>
         <swiper
@@ -36,13 +34,6 @@
 </template>
 
 <script>
-// 使用 ../ 相对路径时，如果当前组件位置发生变化，
-// 那么相对路径也需要去修改, 如果使用 @ 别名的方式。就不需要去修改这个路径了
-// import Swiper from '@/components/Swiper/Swiper.vue'
-// import SwiperItem from '@/components/Swiper/SwiperItem.vue'
-// =>
-// import { Swiper, SwiperItem } from '@/components/Swiper'
-// import { getBanner } from '@/api/cartoon'
 import HeaderHome from './componments/HeaderHome/HeaderHome'
 import { Swiper, SwiperItem } from '@/components/swipper/index.js'
 import { getBanner } from '@/api/comics.js'
@@ -62,8 +53,6 @@ export default {
 
   data () {
     return {
-      // 考虑数据放在哪里和数据格式
-      // props是别人给我传的
       bannerList: {},
       recommendOne: [],
       recommendTwo: [],
@@ -78,7 +67,6 @@ export default {
       this.$router.push('/listing')
     },
     onChange (index) {
-      // console.log('hello', index)
     },
     toDeatilPage (id) {
       console.log(id)
@@ -101,7 +89,6 @@ export default {
           this.recommendFour = res.data.h5_recommend_male_popular_works
           this.recommendSix = res.data.h5_recommend_male_xiaobian_recommend
         } else {
-          // 需要用vant组件左错误提示
           console.log(res.message)
         }
       })
